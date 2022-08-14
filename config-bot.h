@@ -74,7 +74,7 @@
    #undef HAVE_GETCWD so the replacement in getcwd.c will be built.  We do
    not do this on Solaris, because their implementation of loopback mounts
    breaks the traditional file system assumptions that getcwd uses. */
-#if defined (HAVE_GETCWD) && defined (GETCWD_BROKEN) && !defined (SOLARIS)
+#if defined (HAVE_GETCWD) && defined (GETCWD_BROKEN) && !defined (SOLARIS) && !defined (__someos__)
 #  undef HAVE_GETCWD
 #endif
 

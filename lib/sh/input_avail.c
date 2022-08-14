@@ -107,10 +107,8 @@ nchars_avail (fd, nchars)
      int nchars;
 {
   int result, chars_avail;
-#if defined(HAVE_SELECT)
+#if defined(HAVE_SELECT) || defined (HAVE_PSELECT)
   fd_set readfds, exceptfds;
-#endif
-#if defined (HAVE_PSELECT)
   sigset_t set, oset;
 #endif
 
